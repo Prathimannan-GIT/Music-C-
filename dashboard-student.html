@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard | MusicFlow</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#7C3AED',
+                        'primary-dark': '#6D28D9',
+                        secondary: '#F97316',
+                        accent: '#14B8A6'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-slate-50 dark:bg-gray-900 transition-colors duration-300">
+    <!-- Dashboard Container -->
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <aside id="sidebar"
+            class="w-64 bg-white dark:bg-gray-800 border-r border-gray-100 dark:border-gray-700 hidden lg:flex flex-col">
+            <div class="p-6">
+                <a href="index.html" class="flex items-center gap-2">
+                    <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5.02V13.051c-.245-.034-.493-.051-.74-.051-1.8 0-3.26 1.075-3.26 2.4s1.46 2.4 3.26 2.4 3.26-1.075 3.26-2.4V6.261l8-1.6v6.39c-.245-.034-.493-.051-.74-.051-1.8 0-3.26 1.075-3.26 2.4s1.46 2.4 3.26 2.4 3.26-1.075 3.26-2.4V3z">
+                        </path>
+                    </svg>
+                    <span class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">MusicFlow</span>
+                </a>
+            </div>
+
+            <nav class="flex-1 px-4 space-y-1">
+                <a href="dashboard-student.html"
+                    class="flex items-center gap-3 px-4 py-3 text-primary bg-purple-50 dark:bg-primary/10 rounded-xl font-bold transition-all">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                        </path>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+                <a href="courses.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-500 dark:text-gray-400 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-xl font-medium transition-all">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                        </path>
+                    </svg>
+                    <span>My Courses</span>
+                </a>
+                <a href="schedule.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-500 dark:text-gray-400 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-xl font-medium transition-all">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                        </path>
+                    </svg>
+                    <span>Schedule</span>
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-500 dark:text-gray-400 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-xl font-medium transition-all">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z">
+                        </path>
+                    </svg>
+                    <span>Messages</span>
+                    <span
+                        class="ml-auto w-5 h-5 flex items-center justify-center bg-secondary text-white text-[10px] font-bold rounded-full">3</span>
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-500 dark:text-gray-400 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-xl font-medium transition-all">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                        </path>
+                    </svg>
+                    <span>Progress</span>
+                </a>
+            </nav>
+
+            <div class="p-6 border-t border-gray-100 dark:border-gray-700">
+                <a href="index.html"
+                    class="flex items-center gap-3 px-4 py-3 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/10 rounded-xl font-medium transition-all">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
+                        </path>
+                    </svg>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Wrapper -->
+        <div class="flex-1 flex flex-col min-w-0">
+            <!-- Topbar -->
+            <header
+                class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 py-4 px-8 flex items-center justify-between">
+                <button class="lg:hidden p-2 text-gray-400"><svg class="w-6 h-6" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg></button>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white hidden sm:block">Welcome back, Sarah! 👋</h2>
+
+                <div class="flex items-center gap-6">
+                    <button class="relative p-2 text-gray-400 hover:text-primary transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
+                            </path>
+                        </svg>
+                        <span
+                            class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-gray-800"></span>
+                    </button>
+                    <div class="flex items-center gap-3">
+                        <img src="https://i.pravatar.cc/150?u=sarah"
+                            class="w-10 h-10 rounded-full cursor-pointer hover:opacity-80 transition-opacity">
+                        <div class="hidden md:block">
+                            <p class="text-xs font-bold text-gray-900 dark:text-white leading-none">Sarah Miller</p>
+                            <p class="text-[10px] text-gray-400 mt-1">Student Plan</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content Scroll Area -->
+            <main class="flex-1 overflow-y-auto p-8 bg-slate-50 dark:bg-gray-900/50">
+                <!-- Stats Overview -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div
+                        class="bg-white dark:bg-gray-800 p-6 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-700">
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="p-3 bg-purple-100 dark:bg-primary/20 text-primary rounded-2xl">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                                    </path>
+                                </svg>
+                            </div>
+                            <span
+                                class="text-xs font-bold text-green-500 bg-green-50 dark:bg-green-900/10 px-2 py-1 rounded">+2
+                                this week</span>
+                        </div>
+                        <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Active Courses</h4>
+                        <p class="text-2xl font-black text-gray-900 dark:text-white">4</p>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-gray-800 p-6 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-700">
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="p-3 bg-orange-100 dark:bg-secondary/20 text-secondary rounded-2xl">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Learning Hours</h4>
+                        <p class="text-2xl font-black text-gray-900 dark:text-white">42.5h</p>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-gray-800 p-6 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-700">
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="p-3 bg-blue-100 dark:bg-blue-900/20 text-blue-500 rounded-2xl">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Completed</h4>
+                        <p class="text-2xl font-black text-gray-900 dark:text-white">12</p>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-gray-800 p-6 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-700">
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="p-3 bg-teal-100 dark:bg-accent/20 text-accent rounded-2xl">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                        <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Current Streak</h4>
+                        <p class="text-2xl font-black text-gray-900 dark:text-white">7 Days</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Progress Section -->
+                    <div class="lg:col-span-2 space-y-8">
+                        <div
+                            class="bg-white dark:bg-gray-800 p-8 rounded-[2rem] border border-gray-100 dark:border-gray-700">
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-6">Continue Learning</h3>
+                            <div class="flex flex-col md:flex-row gap-6 items-center">
+                                <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=300&q=80"
+                                    class="w-full md:w-32 h-32 rounded-2xl object-cover">
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-gray-900 dark:text-white mb-1">Beginner Guitar Mastery
+                                    </h4>
+                                    <p class="text-xs text-gray-500 mb-4">Lesson 4: Basic Open Chords</p>
+                                    <div
+                                        class="w-full bg-gray-100 dark:bg-gray-700 h-2 rounded-full overflow-hidden mb-2">
+                                        <div class="bg-primary h-full" style="width: 45%"></div>
+                                    </div>
+                                    <span class="text-xs font-bold text-gray-900 dark:text-white">45% Completed</span>
+                                </div>
+                                <button
+                                    class="px-6 py-3 bg-primary text-white text-xs font-bold rounded-xl shadow-lg shadow-primary/20 hover:bg-primary-dark transition-all">Resume</button>
+                            </div>
+                        </div>
+
+                        <!-- Recent Achievements -->
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-6">Recent Achievements</h3>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                                <div
+                                    class="p-4 bg-white dark:bg-gray-800 rounded-2xl flex flex-col items-center text-center opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer">
+                                    <div
+                                        class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-500 mb-2">
+                                        🏆</div>
+                                    <span class="text-[10px] font-bold text-gray-900 dark:text-white">Fast
+                                        Learner</span>
+                                </div>
+                                <!-- ... more icons ... -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar Section (Upcoming) -->
+                    <div class="space-y-8">
+                        <div
+                            class="bg-white dark:bg-gray-800 p-8 rounded-[2rem] border border-gray-100 dark:border-gray-700">
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-6">Upcoming Lessons</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 text-center">
+                                        <span class="block text-xs font-bold text-gray-400 uppercase">Jan</span>
+                                        <span class="block text-xl font-black text-primary">28</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4 class="text-sm font-bold text-gray-900 dark:text-white leading-tight">Jazz
+                                            Piano Session</h4>
+                                        <p class="text-[10px] text-gray-400 mt-1">4:00 PM with John Smith</p>
+                                    </div>
+                                    <button class="p-2 bg-slate-50 dark:bg-gray-900 rounded-lg text-primary"><svg
+                                            class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                            </path>
+                                        </svg></button>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 text-center">
+                                        <span class="block text-xs font-bold text-gray-400 uppercase">Feb</span>
+                                        <span class="block text-xl font-black text-gray-900 dark:text-white">02</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4 class="text-sm font-bold text-gray-900 dark:text-white leading-tight">Vocal
+                                            Warmups</h4>
+                                        <p class="text-[10px] text-gray-400 mt-1">6:30 PM with Elena Fisher</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button
+                                class="w-full mt-8 py-3 bg-slate-50 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs font-bold rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition-all">View
+                                Full Schedule</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
