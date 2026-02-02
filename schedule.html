@@ -131,14 +131,16 @@
         </div>
     </div>
 
-    <main class="py-12 px-6 md:px-12 max-w-[1600px] mx-auto">
+    <main class="py-12 px-6 md:px-12 max-w-[1600px] mx-auto schedule-container">
         <!-- [NEW] Up Next Banner -->
         <div
-            class="mb-12 bg-gradient-to-r from-primary to-primary-dark rounded-[2rem] p-8 text-white shadow-2xl relative overflow-hidden">
+            class="mb-12 bg-gradient-to-r from-primary to-primary-dark rounded-[2rem] p-6 md:p-8 text-white shadow-2xl relative overflow-hidden schedule-card">
             <div class="absolute right-0 top-0 h-full w-1/3 bg-white/10 transform skew-x-12 translate-x-12"></div>
-            <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-                <div class="flex items-center gap-6">
-                    <div class="w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center">
+            <div
+                class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <div
+                        class="w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center shrink-0">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z">
@@ -146,21 +148,22 @@
                         </svg>
                     </div>
                     <div>
-                        <p class="text-indigo-200 font-bold uppercase tracking-wider text-xs mb-1">Happening Now</p>
-                        <h3 class="text-2xl font-bold">Advanced Jazz Improper v2</h3>
+                        <p class="text-indigo-200 font-bold uppercase tracking-wider text-[10px] md:text-xs mb-1">
+                            Happening Now</p>
+                        <h3 class="text-xl md:text-2xl font-bold">Advanced Jazz Improv v2</h3>
                         <p class="text-indigo-100 text-sm">with Dr. David Miller • Started 5 mins ago</p>
                     </div>
                 </div>
                 <button
-                    class="px-8 py-3 bg-white text-primary font-bold rounded-xl hover:bg-indigo-50 transition-colors shadow-lg animate-pulse">Join
+                    class="w-full md:w-auto px-8 py-4 bg-white text-primary font-bold rounded-xl hover:bg-indigo-50 transition-colors shadow-lg">Join
                     Class Now</button>
             </div>
         </div>
         <div class="flex flex-col lg:flex-row gap-8">
             <!-- Sidebar Filters -->
-            <aside class="w-full lg:w-80 space-y-6">
+            <aside class="w-full lg:w-80 space-y-6 booking-sidebar">
                 <div
-                    class="bg-white dark:bg-gray-800 p-8 rounded-[2rem] border border-gray-100 dark:border-gray-700 shadow-sm">
+                    class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-[2rem] border border-gray-100 dark:border-gray-700 shadow-sm schedule-card">
                     <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-6">Booking Details</h3>
                     <div id="booking-preview" class="space-y-6">
                         <div class="flex items-center gap-4 p-4 bg-slate-50 dark:bg-gray-900 rounded-2xl">
@@ -191,21 +194,64 @@
                 </div>
 
                 <div
-                    class="bg-white dark:bg-gray-800 p-8 rounded-[2rem] border border-gray-100 dark:border-gray-700 shadow-sm">
+                    class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-[2rem] border border-gray-100 dark:border-gray-700 shadow-sm schedule-card">
                     <h3 class="text-sm font-bold text-gray-900 dark:text-white mb-4">Filters</h3>
                     <div class="space-y-4">
-                        <select
-                            class="w-full px-4 py-3 bg-slate-50 dark:bg-gray-900 border-none rounded-xl text-xs font-bold text-gray-700 dark:text-gray-300">
-                            <option>All Instruments</option>
-                            <option>Piano</option>
-                            <option>Guitar</option>
-                        </select>
-                        <select
-                            class="w-full px-4 py-3 bg-slate-50 dark:bg-gray-900 border-none rounded-xl text-xs font-bold text-gray-700 dark:text-gray-300">
-                            <option>Any Instructor</option>
-                            <option>John Smith</option>
-                            <option>Elena Fisher</option>
-                        </select>
+                        <!-- Custom Instrument Dropdown -->
+                        <div class="custom-dropdown w-full relative overflow-visible">
+                            <button
+                                class="dropdown-toggle w-full px-4 py-3 bg-slate-50 dark:bg-gray-900 border-none rounded-xl text-xs font-bold text-gray-700 dark:text-gray-300 flex justify-between items-center transition-all hover:bg-slate-100 dark:hover:bg-gray-850"
+                                type="button" aria-haspopup="listbox" aria-expanded="false" id="instrument-filter">
+                                <span>All Instruments</span>
+                                <svg class="dropdown-arrow w-4 h-4 text-gray-400 transition-transform duration-200"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <ul class="dropdown-menu absolute left-0 right-0 mt-2 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl shadow-2xl z-[999] opacity-0 invisible pointer-events-none transform translate-y-2 transition-all duration-200 max-h-[220px] overflow-y-auto overflow-visible"
+                                role="listbox">
+                                <li class="dropdown-item px-4 py-3 text-xs font-bold text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white cursor-pointer transition-colors first:rounded-t-xl last:rounded-b-xl"
+                                    role="option">All Instruments</li>
+                                <li class="dropdown-item px-4 py-3 text-xs font-bold text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white cursor-pointer transition-colors"
+                                    role="option">Piano</li>
+                                <li class="dropdown-item px-4 py-3 text-xs font-bold text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white cursor-pointer transition-colors"
+                                    role="option">Guitar</li>
+                                <li class="dropdown-item px-4 py-3 text-xs font-bold text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white cursor-pointer transition-colors"
+                                    role="option">Violin</li>
+                                <li class="dropdown-item px-4 py-3 text-xs font-bold text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white cursor-pointer transition-colors"
+                                    role="option">Drums</li>
+                                <li class="dropdown-item px-4 py-3 text-xs font-bold text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white cursor-pointer transition-colors"
+                                    role="option">Vocals</li>
+                            </ul>
+                        </div>
+
+                        <!-- Custom Instructor Dropdown -->
+                        <div class="custom-dropdown w-full relative overflow-visible">
+                            <button
+                                class="dropdown-toggle w-full px-4 py-3 bg-slate-50 dark:bg-gray-900 border-none rounded-xl text-xs font-bold text-gray-700 dark:text-gray-300 flex justify-between items-center transition-all hover:bg-slate-100 dark:hover:bg-gray-850"
+                                type="button" aria-haspopup="listbox" aria-expanded="false" id="instructor-filter">
+                                <span>Any Instructor</span>
+                                <svg class="dropdown-arrow w-4 h-4 text-gray-400 transition-transform duration-200"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <ul class="dropdown-menu absolute left-0 right-0 mt-2 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl shadow-2xl z-[999] opacity-0 invisible pointer-events-none transform translate-y-2 transition-all duration-200 max-h-[220px] overflow-y-auto overflow-visible"
+                                role="listbox">
+                                <li class="dropdown-item px-4 py-3 text-xs font-bold text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white cursor-pointer transition-colors first:rounded-t-xl last:rounded-b-xl"
+                                    role="option">Any Instructor</li>
+                                <li class="dropdown-item px-4 py-3 text-xs font-bold text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white cursor-pointer transition-colors"
+                                    role="option">John Smith</li>
+                                <li class="dropdown-item px-4 py-3 text-xs font-bold text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white cursor-pointer transition-colors"
+                                    role="option">Elena Fisher</li>
+                                <li class="dropdown-item px-4 py-3 text-xs font-bold text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white cursor-pointer transition-colors"
+                                    role="option">Michael Jordan</li>
+                                <li class="dropdown-item px-4 py-3 text-xs font-bold text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white cursor-pointer transition-colors"
+                                    role="option">Sarah Jenkins</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </aside>
@@ -239,9 +285,72 @@
                 </div>
 
                 <!-- Calendar Content -->
+                <!-- Mobile Simplified View (Visible only on Mobile < 768px) -->
                 <div
-                    class="bg-white dark:bg-gray-800 rounded-[2rem] border border-gray-100 dark:border-gray-700 overflow-hidden shadow-2xl">
-                    <div class="grid grid-cols-8 divide-x divide-gray-100 dark:divide-gray-700">
+                    class="md:hidden p-4 space-y-6 bg-white dark:bg-gray-800 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-700">
+                    <!-- Day Navigation / Header is already handled by Toolbar above -->
+
+                    <!-- Monday -->
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <span
+                                class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full text-xs font-black">24</span>
+                            <span
+                                class="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider">Monday</span>
+                        </div>
+                        <div class="pl-11 space-y-3 border-l-2 border-slate-100 dark:border-gray-700 ml-4 pb-2">
+                            <div class="bg-primary/5 border-l-4 border-primary p-4 rounded-xl relative">
+                                <span class="text-[10px] font-bold text-primary uppercase block mb-1">09:00 - 09:45
+                                    AM</span>
+                                <h4 class="text-sm font-bold text-gray-900 dark:text-white mb-1">Piano Lesson</h4>
+                                <p class="text-xs text-gray-500">Instructor: John Smith</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tuesday -->
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <span
+                                class="w-8 h-8 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-500 rounded-full text-xs font-black">25</span>
+                            <span class="text-sm font-bold text-gray-400 uppercase tracking-wider">Tuesday</span>
+                        </div>
+                        <div class="pl-11 space-y-3 border-l-2 border-slate-100 dark:border-gray-700 ml-4 pb-2">
+                            <div class="bg-secondary/5 border-l-4 border-secondary p-4 rounded-xl">
+                                <span class="text-[10px] font-bold text-secondary uppercase block mb-1">10:00 - 11:00
+                                    AM</span>
+                                <h4 class="text-sm font-bold text-gray-900 dark:text-white mb-1">Guitar Masterclass</h4>
+                                <p class="text-xs text-gray-500">Instructor: Michael Jordan</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wednesday -->
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <span
+                                class="w-8 h-8 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-500 rounded-full text-xs font-black">26</span>
+                            <span class="text-sm font-bold text-gray-400 uppercase tracking-wider">Wednesday</span>
+                        </div>
+                        <div class="pl-11 space-y-3 border-l-2 border-slate-100 dark:border-gray-700 ml-4 pb-2">
+                            <div class="bg-accent/5 border-l-4 border-accent p-4 rounded-xl">
+                                <span class="text-[10px] font-bold text-accent uppercase block mb-1">11:00 - 11:45
+                                    AM</span>
+                                <h4 class="text-sm font-bold text-gray-900 dark:text-white mb-1">Vocal Training</h4>
+                                <p class="text-xs text-gray-500">Instructor: Elena Fisher</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button
+                        class="w-full py-3 text-sm font-bold text-primary bg-primary/5 rounded-xl hover:bg-primary/10 transition-colors">Load
+                        More Days</button>
+                </div>
+
+                <!-- Tablet/Desktop Weekly View (Visible only on >= 768px) -->
+                <div
+                    class="hidden md:block bg-white dark:bg-gray-800 rounded-[2rem] border border-gray-100 dark:border-gray-700 overflow-hidden shadow-2xl">
+                    <div class="grid grid-cols-8 divide-x divide-gray-100 dark:divide-gray-700 min-w-0">
                         <!-- Time Column -->
                         <div class="flex flex-col">
                             <div
@@ -264,7 +373,7 @@
                         </div>
 
                         <!-- Day Columns -->
-                        <div class="flex-1 flex flex-col group min-w-[120px]">
+                        <div class="flex-1 flex flex-col group min-w-0">
                             <div
                                 class="h-20 flex flex-col items-center justify-center border-b border-gray-100 dark:border-gray-700 bg-slate-50 dark:bg-gray-900/50">
                                 <span class="text-[10px] font-bold text-gray-400 uppercase">Mon</span>
@@ -274,9 +383,10 @@
                                 <div class="h-16 hover:bg-primary/5 cursor-pointer transition-colors relative">
                                     <!-- Event -->
                                     <div
-                                        class="absolute top-1 left-1 right-1 h-[60px] bg-primary/10 border-l-4 border-primary p-2 rounded-r-lg">
-                                        <p class="text-[10px] font-bold text-primary">Piano Lesson</p>
-                                        <p class="text-[8px] text-primary/60">09:00 - 09:45</p>
+                                        class="absolute top-1 left-0.5 right-0.5 h-[60px] bg-primary/10 border-l-2 md:border-l-4 border-primary p-1 md:p-2 rounded-r-lg">
+                                        <p class="text-[7px] md:text-[10px] font-bold text-primary leading-tight">Piano
+                                            Lesson</p>
+                                        <p class="text-[6px] md:text-[8px] text-primary/60">09:00 - 09:45</p>
                                     </div>
                                 </div>
                                 <div class="h-16 hover:bg-primary/5 cursor-pointer transition-colors"></div>
@@ -286,7 +396,7 @@
                         <!-- ... (Repeat for 7 days) ... -->
                         <!-- Placeholder for other 6 days -->
                         <!-- Tuesday -->
-                        <div class="flex-1 flex flex-col group min-w-[120px]">
+                        <div class="flex-1 flex flex-col group min-w-0">
                             <div
                                 class="h-20 flex flex-col items-center justify-center border-b border-gray-100 dark:border-gray-700 bg-slate-50 dark:bg-gray-900/50">
                                 <span class="text-[10px] font-bold text-gray-400 uppercase">Tue</span>
@@ -297,9 +407,10 @@
                                 <div class="h-16 hover:bg-primary/5 cursor-pointer transition-colors relative">
                                     <!-- Event 2: 09:00 or 10:00 (2nd slot) -->
                                     <div
-                                        class="absolute top-1 left-1 right-1 h-[60px] bg-secondary/10 border-l-4 border-secondary p-2 rounded-r-lg">
-                                        <p class="text-[10px] font-bold text-secondary">Guitar Masterclass</p>
-                                        <p class="text-[8px] text-secondary/60">10:00 - 11:00</p>
+                                        class="absolute top-1 left-0.5 right-0.5 h-[60px] bg-secondary/10 border-l-2 md:border-l-4 border-secondary p-1 md:p-2 rounded-r-lg">
+                                        <p class="text-[7px] md:text-[10px] font-bold text-secondary leading-tight">
+                                            Guitar Masterclass</p>
+                                        <p class="text-[6px] md:text-[8px] text-secondary/60">10:00 - 11:00</p>
                                     </div>
                                 </div>
                                 <div class="h-16 hover:bg-primary/5 cursor-pointer transition-colors"></div>
@@ -308,7 +419,7 @@
                             </div>
                         </div>
                         <!-- Wednesday -->
-                        <div class="flex-1 flex flex-col group min-w-[120px]">
+                        <div class="flex-1 flex flex-col group min-w-0">
                             <div
                                 class="h-20 flex flex-col items-center justify-center border-b border-gray-100 dark:border-gray-700 bg-slate-50 dark:bg-gray-900/50">
                                 <span class="text-[10px] font-bold text-gray-400 uppercase">Wed</span>
@@ -320,9 +431,10 @@
                                 <div class="h-16 hover:bg-primary/5 cursor-pointer transition-colors relative">
                                     <!-- Event 3: 3rd slot -->
                                     <div
-                                        class="absolute top-1 left-1 right-1 h-[60px] bg-accent/10 border-l-4 border-accent p-2 rounded-r-lg">
-                                        <p class="text-[10px] font-bold text-accent">Vocal Training</p>
-                                        <p class="text-[8px] text-accent/60">11:00 - 11:45</p>
+                                        class="absolute top-1 left-0.5 right-0.5 h-[60px] bg-accent/10 border-l-2 md:border-l-4 border-accent p-1 md:p-2 rounded-r-lg">
+                                        <p class="text-[7px] md:text-[10px] font-bold text-accent leading-tight">Vocal
+                                            Training</p>
+                                        <p class="text-[6px] md:text-[8px] text-accent/60">11:00 - 11:45</p>
                                     </div>
                                 </div>
                                 <div class="h-16 hover:bg-primary/5 cursor-pointer transition-colors"></div>
@@ -330,7 +442,7 @@
                             </div>
                         </div>
                         <!-- Thursday -->
-                        <div class="flex-1 flex flex-col group min-w-[120px]">
+                        <div class="flex-1 flex flex-col group min-w-0">
                             <div
                                 class="h-20 flex flex-col items-center justify-center border-b border-gray-100 dark:border-gray-700 bg-slate-50 dark:bg-gray-900/50">
                                 <span class="text-[10px] font-bold text-gray-400 uppercase">Thu</span>
@@ -343,10 +455,12 @@
                                 <div class="h-16 hover:bg-primary/5 cursor-pointer transition-colors relative">
                                     <!-- Event 4: 4th slot -->
                                     <div
-                                        class="absolute top-1 left-1 right-1 h-[60px] bg-purple-500/10 border-l-4 border-purple-500 p-2 rounded-r-lg">
-                                        <p class="text-[10px] font-bold text-purple-600 dark:text-purple-400">
+                                        class="absolute top-1 left-0.5 right-0.5 h-[60px] bg-purple-500/10 border-l-2 md:border-l-4 border-purple-500 p-1 md:p-2 rounded-r-lg">
+                                        <p
+                                            class="text-[7px] md:text-[10px] font-bold text-purple-600 dark:text-purple-400 leading-tight">
                                             Songwriting Workshop</p>
-                                        <p class="text-[8px] text-purple-600/60 dark:text-purple-400/60">13:00 - 14:30
+                                        <p class="text-[6px] md:text-[8px] text-purple-600/60 dark:text-purple-400/60">
+                                            13:00 - 14:30
                                         </p>
                                     </div>
                                 </div>
@@ -354,7 +468,7 @@
                             </div>
                         </div>
                         <!-- Friday -->
-                        <div class="flex-1 flex flex-col group min-w-[120px]">
+                        <div class="flex-1 flex flex-col group min-w-0">
                             <div
                                 class="h-20 flex flex-col items-center justify-center border-b border-gray-100 dark:border-gray-700 bg-slate-50 dark:bg-gray-900/50">
                                 <span class="text-[10px] font-bold text-gray-400 uppercase">Fri</span>
@@ -368,26 +482,24 @@
                                 <div class="h-16 hover:bg-primary/5 cursor-pointer transition-colors relative">
                                     <!-- Event 5: 5th slot -->
                                     <div
-                                        class="absolute top-1 left-1 right-1 h-[60px] bg-pink-500/10 border-l-4 border-pink-500 p-2 rounded-r-lg">
-                                        <p class="text-[10px] font-bold text-pink-600 dark:text-pink-400">Drum Practice
+                                        class="absolute top-1 left-0.5 right-0.5 h-[60px] bg-pink-500/10 border-l-2 md:border-l-4 border-pink-500 p-1 md:p-2 rounded-r-lg">
+                                        <p
+                                            class="text-[7px] md:text-[10px] font-bold text-pink-600 dark:text-pink-400 leading-tight">
+                                            Drum Practice
                                         </p>
-                                        <p class="text-[8px] text-pink-600/60 dark:text-pink-400/60">16:00 - 17:00</p>
+                                        <p class="text-[6px] md:text-[8px] text-pink-600/60 dark:text-pink-400/60">16:00
+                                            - 17:00</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="flex-1 flex flex-col group min-w-[120px]">
-                            <div class="h-20 border-b dark:border-gray-700"></div>
-                            <div class="flex-1 divide-y dark:divide-gray-700"></div>
-                        </div>
-                        <div class="flex-1 flex flex-col group min-w-[120px]">
+                        <div class="flex-1 flex flex-col group min-w-0">
                             <div class="h-20 border-b dark:border-gray-700"></div>
                             <div class="flex-1 divide-y dark:divide-gray-700"></div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </main>
 
     <!-- Footer -->

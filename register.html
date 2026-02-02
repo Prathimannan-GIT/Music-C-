@@ -24,40 +24,31 @@
     </script>
 </head>
 
-<body class="bg-slate-50 dark:bg-gray-900 transition-colors duration-300">
+<body class="bg-slate-50 dark:bg-gray-900 transition-colors duration-300 auth-container">
     <div class="flex min-h-screen">
         <!-- Left Side: Image (Hidden on mobile) -->
         <div class="hidden lg:flex lg:w-1/2 relative">
-            <img src="https://images.unsplash.com/photo-1514320298324-ee4c59972323?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
-                alt="Music learning" class="absolute inset-0 w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1350&q=80"
+                alt="" class="absolute inset-0 w-full h-full object-cover">
             <div class="absolute inset-0 bg-purple-900/40 backdrop-blur-[2px]"></div>
             <div class="relative z-10 flex flex-col justify-center px-12 text-white">
-                <a href="index.html" class="absolute top-8 left-8 flex items-center gap-2">
-                    <svg class="w-10 h-10 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                        <path
-                            d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5.02V13.051c-.245-.034-.493-.051-.74-.051-1.8 0-3.26 1.075-3.26 2.4s1.46 2.4 3.26 2.4 3.26-1.075 3.26-2.4V6.261l8-1.6v6.39c-.245-.034-.493-.051-.74-.051-1.8 0-3.26 1.075-3.26 2.4s1.46 2.4 3.26 2.4 3.26-1.075 3.26-2.4V3z">
-                        </path>
-                    </svg>
-                    <span class="text-2xl font-bold tracking-tight">MusicFlow</span>
-                </a>
                 <h2 class="text-4xl font-bold mb-6">Join 10,000+ Musicians Worldwide</h2>
                 <p class="text-xl text-purple-100">"Where words fail, music speaks." — Hans Christian Andersen</p>
             </div>
         </div>
 
         <!-- Right Side: Registration Form -->
-        <div class="flex-1 flex flex-col justify-center items-center px-6 py-12 lg:px-24 bg-white dark:bg-gray-900">
+        <div
+            class="flex-1 flex flex-col justify-start sm:justify-center items-center px-6 py-12 lg:px-24 bg-white dark:bg-gray-900 auth-form-container">
             <div class="w-full max-w-md">
                 <div class="text-center mb-10">
-                    <div class="lg:hidden flex justify-center mb-6">
-                        <a href="index.html" class="flex items-center gap-2">
-                            <svg class="w-12 h-12 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                    <div class="flex justify-center mb-6">
+                        <a href="index.html" class="flex items-center justify-center">
+                            <svg class="w-16 h-16 text-primary" fill="currentColor" viewBox="0 0 20 20">
                                 <path
                                     d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5.02V13.051c-.245-.034-.493-.051-.74-.051-1.8 0-3.26 1.075-3.26 2.4s1.46 2.4 3.26 2.4 3.26-1.075 3.26-2.4V6.261l8-1.6v6.39c-.245-.034-.493-.051-.74-.051-1.8 0-3.26 1.075-3.26 2.4s1.46 2.4 3.26 2.4 3.26-1.075 3.26-2.4V3z">
                                 </path>
                             </svg>
-                            <span
-                                class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">MusicFlow</span>
                         </a>
                     </div>
                     <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Start Your Musical Journey</h1>
@@ -204,6 +195,13 @@
                                 <option>Advanced</option>
                             </select>
                         </div>
+                        <div class="flex items-center">
+                            <input id="terms-checkbox" type="checkbox"
+                                class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded" required>
+                            <label for="terms-checkbox" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">
+                                I agree to the <a href="#" class="text-primary hover:underline">Terms & Conditions</a>
+                            </label>
+                        </div>
                         <div class="flex gap-4 pt-4">
                             <button type="button" onclick="nextStep(2)"
                                 class="flex-1 py-3 px-4 border border-gray-300 dark:border-gray-700 rounded-lg font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all">Back</button>
@@ -226,7 +224,7 @@
 
                     <div class="mt-6 grid grid-cols-2 gap-3">
                         <button
-                            class="w-full inline-flex justify-center py-2.5 px-4 border border-gray-300 dark:border-gray-700 rounded-lg shadow-sm bg-white dark:bg-gray-800 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
+                            class="social-btn w-full inline-flex justify-center py-2.5 px-4 border border-gray-300 dark:border-gray-700 rounded-lg shadow-sm bg-white dark:bg-gray-800 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
                             <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
                                 <path
                                     d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -244,7 +242,7 @@
                             Google
                         </button>
                         <button
-                            class="w-full inline-flex justify-center py-2.5 px-4 border border-gray-300 dark:border-gray-700 rounded-lg shadow-sm bg-white dark:bg-gray-800 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
+                            class="social-btn w-full inline-flex justify-center py-2.5 px-4 border border-gray-300 dark:border-gray-700 rounded-lg shadow-sm bg-white dark:bg-gray-800 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
                             <svg class="w-5 h-5 mr-2 text-[#1877F2]" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854V15.47H7.078V12.07h3.047V9.479c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.403h-2.796v8.457C19.612 23.027 24 18.062 24 12.073z" />

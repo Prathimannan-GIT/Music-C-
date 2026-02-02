@@ -39,7 +39,12 @@ body {
     color: var(--text-main);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Poppins', sans-serif;
 }
 
@@ -75,13 +80,27 @@ h1, h2, h3, h4, h5, h6 {
 
 /* RTL Support */
 [dir="rtl"] {
-    font-family: 'Inter', sans-serif; /* Add Arabic font if needed */
+    font-family: 'Inter', sans-serif;
+    /* Add Arabic font if needed */
 }
 
-[dir="rtl"] .ml-auto { margin-right: auto; margin-left: 0; }
-[dir="rtl"] .mr-auto { margin-left: auto; margin-right: 0; }
-[dir="rtl"] .text-left { text-align: right; }
-[dir="rtl"] .text-right { text-align: left; }
+[dir="rtl"] .ml-auto {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+[dir="rtl"] .mr-auto {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+[dir="rtl"] .text-left {
+    text-align: right;
+}
+
+[dir="rtl"] .text-right {
+    text-align: left;
+}
 
 /* Sticky Header */
 .header-sticky {
@@ -95,6 +114,35 @@ h1, h2, h3, h4, h5, h6 {
 
 .dark .header-sticky {
     background-color: rgba(17, 24, 39, 0.8);
+}
+
+/* Navbar responsive fixes */
+@media (max-width: 1023px) {
+    .header-sticky {
+        padding: 0.75rem 1rem;
+    }
+
+    .header-sticky .hidden.md\\:block {
+        display: none !important;
+    }
+
+    .header-sticky .lg\\:flex {
+        display: none !important;
+    }
+
+    .header-sticky .lg\\:hidden {
+        display: flex !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .header-sticky .lg\\:hidden {
+        display: none !important;
+    }
+
+    .header-sticky .lg\\:flex {
+        display: flex !important;
+    }
 }
 
 /* Card Hover */
@@ -121,6 +169,7 @@ h1, h2, h3, h4, h5, h6 {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -129,4 +178,256 @@ h1, h2, h3, h4, h5, h6 {
 
 .animate-fade-up {
     animation: fadeInUp 0.5s ease forwards;
+}
+
+/* Social Media Hover Effects */
+.social-btn {
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Auth Pages Viewport Fix */
+.auth-container {
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Accordion Styles */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.accordion-content.active {
+    max-height: 500px;
+    transition: max-height 0.3s ease-in;
+}
+
+.accordion-icon {
+    transition: transform 0.3s ease;
+}
+
+.accordion-icon.rotate {
+    transform: rotate(180deg);
+}
+
+/* Schedule Page Responsive Fixes */
+@media (max-width: 768px) {
+    .schedule-container {
+        padding: 1rem;
+    }
+
+    .schedule-card {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .calendar-grid {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .calendar-grid>div {
+        min-width: 120px;
+    }
+
+    .booking-sidebar {
+        order: 2;
+    }
+
+    .calendar-main {
+        order: 1;
+    }
+}
+
+/* Responsive fixes for mobile */
+@media (max-width: 768px) {
+    .auth-container {
+        min-height: 100vh;
+        padding: 1rem;
+    }
+
+    .auth-form-container {
+        padding: 1rem;
+        max-height: 100vh;
+        overflow-y: auto;
+    }
+}
+
+/* Tablet-specific fixes for Student Success Stories */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .testimonial-card .student-details {
+        flex: 1;
+        min-width: 0;
+    }
+}
+
+/* Global Testimonial Card Styles */
+.testimonial-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimonial-card .student-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-card .student-name {
+    font-size: 1.125rem;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 0.125rem;
+}
+
+.dark .testimonial-card .student-name {
+    color: #F9FAFB;
+}
+
+.testimonial-card .student-role {
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+}
+
+.testimonial-card .testimonial-text {
+    color: #4B5563;
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.dark .testimonial-card .testimonial-text {
+    color: #D1D5DB;
+}
+
+.testimonial-card .rating {
+    display: flex !important;
+    gap: 0.25rem;
+    margin-top: auto;
+    flex-direction: row !important;
+}
+
+.testimonial-card .rating svg {
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .testimonial-card {
+        padding: 1.5rem !important;
+    }
+
+    .testimonial-card .student-info {
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .testimonial-card .student-name {
+        font-size: 1rem;
+    }
+}
+
+/* Social button hover effects */
+.social-btn {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-color: var(--primary);
+    background-color: var(--primary);
+    color: white !important;
+}
+
+.social-btn:hover svg {
+    color: white !important;
+    fill: white !important;
+}
+
+/* Custom Dropdown Styles */
+.custom-dropdown {
+    position: relative;
+    user-select: none;
+}
+
+.dropdown-menu {
+    transform-origin: top;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.custom-dropdown.active .dropdown-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+}
+
+.custom-dropdown.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* Ensure parents don't clip dropdowns */
+.booking-sidebar,
+.schedule-card,
+.schedule-container {
+    overflow: visible !important;
+}
+
+/* Custom Scrollbar for Dropdown */
+.dropdown-menu::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 10px;
+}
+
+.dark .dropdown-menu::-webkit-scrollbar-thumb {
+    background: #4B5563;
+}
+
+/* Mobile Responsive Dropdown Adjustments */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        max-width: 100%;
+        position: absolute;
+    }
+
+    /* If dropdown is near bottom, it can open upwards */
+    .custom-dropdown.open-upward .dropdown-menu {
+        bottom: 100%;
+        top: auto;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        transform-origin: bottom;
+        transform: translateY(-10px);
+    }
+
+    .custom-dropdown.open-upward.active .dropdown-menu {
+        transform: translateY(0) !important;
+    }
+}
+
+.dark .bg-gray-850 {
+    background-color: #1f2937;
+}
+
+.dark .dropdown-item:hover {
+    background-color: var(--primary);
 }
