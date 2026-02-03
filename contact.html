@@ -173,6 +173,7 @@
             <div class="lg:w-2/5 space-y-6">
                 <div
                     class="p-8 bg-white dark:bg-gray-800 rounded-[2rem] border border-gray-100 dark:border-gray-700 shadow-xl hover:shadow-2xl transition-shadow group">
+                    
                     <div class="flex items-start gap-4">
                         <div
                             class="p-4 bg-primary/10 rounded-2xl text-primary group-hover:bg-primary group-hover:text-white transition-colors">
@@ -234,32 +235,52 @@
             </div>
         </div>
 
+        <!-- Map Section -->
+        <div
+            class="mb-24 rounded-[2rem] overflow-hidden shadow-xl border border-gray-100 dark:border-gray-700 h-[450px]">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093747!2d-122.4194155!3d37.7749295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c6c8f4459%3A0xb10ed6d9b5050c58!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+
         <!-- FAQ Section -->
         <section class="max-w-4xl mx-auto">
             <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-center">Frequently Asked Questions
             </h2>
             <div class="space-y-4">
-                <div class="border border-gray-200 dark:border-gray-700 rounded-2xl overflow-hidden hover:shadow-md transition-shadow">
-                    <button onclick="toggleAccordion(this)" class="w-full px-8 py-6 flex justify-between items-center text-left bg-white dark:bg-gray-800 focus:outline-none">
+                <div
+                    class="border border-gray-200 dark:border-gray-700 rounded-2xl overflow-hidden hover:shadow-md transition-shadow">
+                    <button onclick="toggleAccordion(this)"
+                        class="w-full px-8 py-6 flex justify-between items-center text-left bg-white dark:bg-gray-800 focus:outline-none">
                         <span class="font-bold text-lg text-gray-900 dark:text-white">How do I book a lesson?</span>
-                        <svg class="accordion-icon w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        <svg class="accordion-icon w-6 h-6 text-primary" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
                         </svg>
                     </button>
                     <div class="accordion-content px-8 bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-                        <p class="py-6 text-sm">You can book a lesson by visiting the teachers directory, choosing your preferred instructor, and selecting an available time slot from their profile page.</p>
+                        <p class="py-6 text-sm">You can book a lesson by visiting the teachers directory, choosing your
+                            preferred instructor, and selecting an available time slot from their profile page.</p>
                     </div>
                 </div>
-                
-                <div class="border border-gray-200 dark:border-gray-700 rounded-2xl overflow-hidden hover:shadow-md transition-shadow">
-                    <button onclick="toggleAccordion(this)" class="w-full px-8 py-6 flex justify-between items-center text-left bg-white dark:bg-gray-800 focus:outline-none">
-                        <span class="font-bold text-lg text-gray-900 dark:text-white">What payment methods do you accept?</span>
-                        <svg class="accordion-icon w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+
+                <div
+                    class="border border-gray-200 dark:border-gray-700 rounded-2xl overflow-hidden hover:shadow-md transition-shadow">
+                    <button onclick="toggleAccordion(this)"
+                        class="w-full px-8 py-6 flex justify-between items-center text-left bg-white dark:bg-gray-800 focus:outline-none">
+                        <span class="font-bold text-lg text-gray-900 dark:text-white">What payment methods do you
+                            accept?</span>
+                        <svg class="accordion-icon w-6 h-6 text-primary" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
                         </svg>
                     </button>
                     <div class="accordion-content px-8 bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-                        <p class="py-6 text-sm">We accept all major credit cards, PayPal, and Apple Pay. All payments are processed securely.</p>
+                        <p class="py-6 text-sm">We accept all major credit cards, PayPal, and Apple Pay. All payments
+                            are processed securely.</p>
                     </div>
                 </div>
             </div>
@@ -270,14 +291,16 @@
     <footer class="bg-slate-900 text-slate-300 py-16 px-6 md:px-12 mt-24">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             <div class="space-y-6">
-                <a href="index.html" class="flex items-center gap-2 text-white">
-                    <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                        <path
-                            d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5.02V13.051c-.245-.034-.493-.051-.74-.051-1.8 0-3.26 1.075-3.26 2.4s1.46 2.4 3.26 2.4 3.26-1.075 3.26-2.4V6.261l8-1.6v6.39c-.245-.034-.493-.051-.74-.051-1.8 0-3.26 1.075-3.26 2.4s1.46 2.4 3.26 2.4 3.26-1.075 3.26-2.4V3z">
-                        </path>
-                    </svg>
-                    <span class="text-2xl font-bold tracking-tight">MusicFlow</span>
-                </a>
+                <div class="flex justify-center mb-6">
+                    <a href="index.html" class="flex items-center justify-center gap-2">
+                        <svg class="w-10 h-10 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5.02V13.051c-.245-.034-.493-.051-.74-.051-1.8 0-3.26 1.075-3.26 2.4s1.46 2.4 3.26 2.4 3.26-1.075 3.26-2.4V6.261l8-1.6v6.39c-.245-.034-.493-.051-.74-.051-1.8 0-3.26 1.075-3.26 2.4s1.46 2.4 3.26 2.4 3.26-1.075 3.26-2.4V3z">
+                            </path>
+                        </svg>
+                        <span class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">MusicFlow</span>
+                    </a>
+                </div>
                 <p class="text-slate-400">Making music education accessible, affordable, and fun for everyone,
                     everywhere.</p>
                 <div class="flex gap-4">

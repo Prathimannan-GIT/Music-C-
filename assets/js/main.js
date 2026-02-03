@@ -140,4 +140,32 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Generic Filter Toggle Handler
+    function setupFilterToggle(toggleId, containerId, iconId) {
+        const toggle = document.getElementById(toggleId);
+        const container = document.getElementById(containerId) || document.querySelector(containerId);
+        const icon = document.getElementById(iconId) || (toggle ? toggle.querySelector('svg') : null);
+
+        if (toggle && container) {
+            toggle.addEventListener('click', () => {
+                // Toggle hidden class if it exists (for course-filters)
+                if (container.classList.contains('hidden') || container.id === 'course-filters') {
+                    container.classList.toggle('hidden');
+                }
+
+                // Small timeout for transition
+                setTimeout(() => {
+                    container.classList.toggle('active');
+                    if (icon) {
+                        icon.style.transform = container.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+                    }
+                }, 10);
+            });
+        }
+    }
+
+    // Initialize Toggles
+    setupFilterToggle('mobile-filter-toggle', '.filter-options-container', null);
+    setupFilterToggle('course-filter-toggle', 'course-filters', 'filter-arrow');
 });

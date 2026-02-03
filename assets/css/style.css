@@ -108,15 +108,25 @@ h6 {
     top: 0;
     z-index: 50;
     backdrop-filter: blur(8px);
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.95);
     transition: all 0.3s ease;
 }
 
 .dark .header-sticky {
-    background-color: rgba(17, 24, 39, 0.8);
+    background-color: rgba(17, 24, 39, 0.95);
 }
 
 /* Navbar responsive fixes */
+@media (max-width: 1100px) {
+    .header-sticky nav {
+        gap: 1.5rem;
+    }
+
+    .header-sticky nav a {
+        font-size: 0.95rem;
+    }
+}
+
 @media (max-width: 1023px) {
     .header-sticky {
         padding: 0.75rem 1rem;
@@ -163,6 +173,12 @@ h6 {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
+.music-card img {
+    height: 14rem;
+    width: 100%;
+    object-fit: cover;
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {
@@ -193,7 +209,19 @@ h6 {
 /* Auth Pages Viewport Fix */
 .auth-container {
     min-height: 100vh;
-    overflow: hidden;
+}
+
+/* Hide scrollbar but maintain functionality */
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari and Opera */
 }
 
 /* Accordion Styles */
@@ -247,13 +275,7 @@ h6 {
 
 /* Responsive fixes for mobile */
 @media (max-width: 768px) {
-    .auth-container {
-        min-height: 100vh;
-        padding: 1rem;
-    }
-
     .auth-form-container {
-        padding: 1rem;
         max-height: 100vh;
         overflow-y: auto;
     }
@@ -261,9 +283,40 @@ h6 {
 
 /* Tablet-specific fixes for Student Success Stories */
 @media (min-width: 768px) and (max-width: 1024px) {
+    .testimonial-card {
+        padding: 1.5rem !important;
+    }
+
+    .testimonial-card .quote-icon {
+        position: static !important;
+        margin-left: auto;
+        margin-bottom: 1rem;
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+    }
+
+    .testimonial-card .student-info {
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+    }
+
     .testimonial-card .student-details {
         flex: 1;
         min-width: 0;
+    }
+
+    .testimonial-card .student-name {
+        font-size: 1rem;
+    }
+
+    .testimonial-card .student-role {
+        font-size: 0.75rem;
+    }
+
+    .testimonial-card .testimonial-text {
+        font-size: 0.9375rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
     }
 }
 
@@ -430,4 +483,70 @@ h6 {
 
 .dark .dropdown-item:hover {
     background-color: var(--primary);
+}
+
+/* Social Login Button Fix */
+.social-login-btn {
+    transition: all 0.3s ease;
+}
+
+.social-login-btn:hover {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    color: white !important;
+}
+
+.social-login-btn:hover svg path {
+    fill: white !important;
+}
+
+/* Home 2 Filter Collapse */
+.filter-options-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    opacity: 0;
+}
+
+.filter-options-container.active {
+    max-height: 500px;
+    /* Arbitrary large height */
+    opacity: 1;
+}
+
+@media (min-width: 1024px) {
+    .filter-options-container {
+        max-height: none !important;
+        overflow: visible !important;
+        opacity: 1 !important;
+        display: block !important;
+    }
+}
+
+#course-filter-toggle svg#filter-arrow {
+    transition: transform 0.3s ease;
+}
+
+/* Authentication Page Controls Alignment */
+.auth-controls-container {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.auth-controls-container button {
+    flex-shrink: 0 !important;
+}
+
+/* Schedule Hero Stats Mobile Alignment */
+@media (max-width: 480px) {
+    .hero-stats-container {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        gap: 1rem !important;
+    }
 }
