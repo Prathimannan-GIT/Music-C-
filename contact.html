@@ -29,11 +29,8 @@
     <!-- Header -->
     <header class="header-sticky py-4 px-6 md:px-12 flex items-center justify-between">
         <a href="index.html" class="flex items-center gap-2">
-            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                    d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5.02V13.051c-.245-.034-.493-.051-.74-.051-1.8 0-3.26 1.075-3.26 2.4s1.46 2.4 3.26 2.4 3.26-1.075 3.26-2.4V6.261l8-1.6v6.39c-.245-.034-.493-.051-.74-.051-1.8 0-3.26 1.075-3.26 2.4s1.46 2.4 3.26 2.4 3.26-1.075 3.26-2.4V3z">
-                </path>
-            </svg>
+            <img src="assets/images/favicon.svg" alt="MusicFlow Logo"
+                class="w-8 h-8 rounded-lg shadow-lg shadow-primary/20">
             <span class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">MusicFlow</span>
         </a>
 
@@ -71,11 +68,14 @@
                 <button id="rtl-toggle"
                     class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-semibold rounded text-gray-600 dark:text-gray-400">AR/EN</button>
             </div>
-            <a href="login.html"
-                class="px-5 py-2 text-primary font-semibold border border-primary rounded-lg hover:bg-primary/5 transition-all">Login</a>
-            <a href="register.html"
-                class="hidden md:block px-5 py-2 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark transition-all">Sign
-                Up</a>
+            <!-- Auth Buttons (Hidden on mobile/tablet) -->
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="login.html"
+                    class="px-5 py-2 text-primary font-semibold border border-primary rounded-lg hover:bg-primary/5 transition-all">Login</a>
+                <a href="register.html"
+                    class="px-5 py-2 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark transition-all">Sign
+                    Up</a>
+            </div>
 
             <!-- Mobile Menu Btn -->
             <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-600 dark:text-gray-400">
@@ -108,7 +108,7 @@
         </div>
     </div>
 
-    <main class="py-16 px-6 md:px-12 max-w-7xl mx-auto">
+    <main class="py-16 px-6 md:px-12 max-w-6xl mx-auto">
         <div class="bg-primary py-24 px-6 md:px-12 relative overflow-hidden text-center text-white">
             <div class="absolute inset-0 opacity-10">
                 <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -173,7 +173,7 @@
             <div class="lg:w-2/5 space-y-6">
                 <div
                     class="p-8 bg-white dark:bg-gray-800 rounded-[2rem] border border-gray-100 dark:border-gray-700 shadow-xl hover:shadow-2xl transition-shadow group">
-                    
+
                     <div class="flex items-start gap-4">
                         <div
                             class="p-4 bg-primary/10 rounded-2xl text-primary group-hover:bg-primary group-hover:text-white transition-colors">
@@ -289,16 +289,12 @@
 
     <!-- Footer -->
     <footer class="bg-slate-900 text-slate-300 py-16 px-6 md:px-12 mt-24">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             <div class="space-y-6">
                 <div class="flex justify-center mb-6">
-                    <a href="index.html" class="flex items-center justify-center gap-2">
-                        <svg class="w-10 h-10 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                            <path
-                                d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5.02V13.051c-.245-.034-.493-.051-.74-.051-1.8 0-3.26 1.075-3.26 2.4s1.46 2.4 3.26 2.4 3.26-1.075 3.26-2.4V6.261l8-1.6v6.39c-.245-.034-.493-.051-.74-.051-1.8 0-3.26 1.075-3.26 2.4s1.46 2.4 3.26 2.4 3.26-1.075 3.26-2.4V3z">
-                            </path>
-                        </svg>
-                        <span class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">MusicFlow</span>
+                    <a href="index.html" class="flex items-center gap-2 text-white">
+                        <img src="assets/images/favicon.svg" alt="MusicFlow Logo" class="w-8 h-8 rounded-lg">
+                        <span class="text-2xl font-bold tracking-tight">MusicFlow</span>
                     </a>
                 </div>
                 <p class="text-slate-400">Making music education accessible, affordable, and fun for everyone,

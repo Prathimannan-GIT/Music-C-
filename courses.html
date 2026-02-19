@@ -29,11 +29,8 @@
     <!-- Header -->
     <header class="header-sticky py-4 px-6 md:px-12 flex items-center justify-between">
         <a href="index.html" class="flex items-center gap-2">
-            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                    d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5.02V13.051c-.245-.034-.493-.051-.74-.051-1.8 0-3.26 1.075-3.26 2.4s1.46 2.4 3.26 2.4 3.26-1.075 3.26-2.4V6.261l8-1.6v6.39c-.245-.034-.493-.051-.74-.051-1.8 0-3.26 1.075-3.26 2.4s1.46 2.4 3.26 2.4 3.26-1.075 3.26-2.4V3z">
-                </path>
-            </svg>
+            <img src="assets/images/favicon.svg" alt="MusicFlow Logo"
+                class="w-8 h-8 rounded-lg shadow-lg shadow-primary/20">
             <span class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">MusicFlow</span>
         </a>
 
@@ -71,11 +68,14 @@
                 <button id="rtl-toggle"
                     class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-semibold rounded text-gray-600 dark:text-gray-400">AR/EN</button>
             </div>
-            <a href="login.html"
-                class="px-5 py-2 text-primary font-semibold border border-primary rounded-lg hover:bg-primary/5 transition-all">Login</a>
-            <a href="register.html"
-                class="hidden md:block px-5 py-2 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark transition-all">Sign
-                Up</a>
+            <!-- Auth Buttons (Hidden on mobile/tablet) -->
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="login.html"
+                    class="px-5 py-2 text-primary font-semibold border border-primary rounded-lg hover:bg-primary/5 transition-all">Login</a>
+                <a href="register.html"
+                    class="px-5 py-2 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark transition-all">Sign
+                    Up</a>
+            </div>
 
             <!-- Mobile Menu Btn -->
             <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-600 dark:text-gray-400">
@@ -128,12 +128,12 @@
     </section>
 
     <!-- Main Content -->
-    <main class="max-w-7xl mx-auto py-12 px-6 md:px-12 flex flex-col lg:flex-row gap-8">
+    <main class="max-w-6xl mx-auto py-12 px-6 md:px-12 flex flex-col gap-8">
         <!-- Sidebar Filters -->
-        <div class="lg:w-64">
+        <div class="w-full">
             <!-- Mobile/Tablet Filter Button -->
             <button id="course-filter-toggle"
-                class="lg:hidden w-full mb-6 flex items-center justify-between p-4 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 transition-all hover:bg-gray-50 dark:hover:bg-gray-700/50 group">
+                class="w-full mb-6 flex items-center justify-between p-4 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 transition-all hover:bg-gray-50 dark:hover:bg-gray-700/50 group">
                 <div class="flex items-center gap-3">
                     <div class="p-2 bg-primary/10 rounded-lg text-primary">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -151,7 +151,7 @@
                 </svg>
             </button>
 
-            <aside id="course-filters" class="hidden lg:block space-y-8 filter-options-container">
+            <aside id="course-filters" class="hidden space-y-8 filter-options-container">
                 <!-- Search -->
                 <div class="relative">
                     <input type="text" placeholder="Search courses..."
@@ -315,7 +315,7 @@
             </div>
 
             <!-- Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Course Card 1: Guitar -->
                 <div class="music-card group overflow-hidden bg-white dark:bg-gray-800 flex flex-col h-full">
                     <div class="relative h-56 overflow-hidden">
@@ -325,17 +325,17 @@
                             class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-lg uppercase tracking-wider shadow-lg">
                             Guitar</div>
                     </div>
-                    <div class="p-6 flex flex-col flex-1">
+                    <div class="p-6 flex flex-col items-center text-center flex-1">
                         <h3
                             class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors line-clamp-2">
                             Acoustic Guitar Mastery: Zero to Pro</h3>
-                        <div class="flex items-center gap-3 mb-6">
+                        <div class="flex flex-col items-center gap-2 mb-6">
                             <img src="https://i.pravatar.cc/150?u=mark"
-                                class="w-8 h-8 rounded-full border-2 border-white dark:border-gray-700">
-                            <span class="text-sm font-medium text-gray-600 dark:text-gray-400">Mark Thompson</span>
+                                class="w-10 h-10 rounded-xl border-2 border-white dark:border-gray-700 transition-transform group-hover:scale-110">
+                            <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">Mark Thompson</span>
                         </div>
                         <div
-                            class="mt-auto pt-6 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between">
+                            class="mt-auto w-full pt-6 border-t border-gray-100 dark:border-gray-700 flex items-center justify-center gap-8">
                             <div class="flex flex-col">
                                 <span class="text-2xl font-black text-gray-900 dark:text-white">$49.00</span>
                             </div>
@@ -365,17 +365,17 @@
                             class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-lg uppercase tracking-wider shadow-lg">
                             Piano</div>
                     </div>
-                    <div class="p-6 flex flex-col flex-1">
+                    <div class="p-6 flex flex-col items-center text-center flex-1">
                         <h3
                             class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors line-clamp-2">
                             Classical Piano Essentials</h3>
-                        <div class="flex items-center gap-3 mb-6">
+                        <div class="flex flex-col items-center gap-2 mb-6">
                             <img src="https://i.pravatar.cc/150?u=elena"
-                                class="w-8 h-8 rounded-full border-2 border-white dark:border-gray-700">
-                            <span class="text-sm font-medium text-gray-600 dark:text-gray-400">Elena Vance</span>
+                                class="w-10 h-10 rounded-xl border-2 border-white dark:border-gray-800 transition-transform group-hover:scale-110">
+                            <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">Elena Vance</span>
                         </div>
                         <div
-                            class="mt-auto pt-6 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between">
+                            class="mt-auto w-full pt-6 border-t border-gray-100 dark:border-gray-700 flex items-center justify-center gap-8">
                             <div class="flex flex-col">
                                 <span class="text-2xl font-black text-gray-900 dark:text-white">$79.00</span>
                             </div>
@@ -405,17 +405,17 @@
                             class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-lg uppercase tracking-wider shadow-lg">
                             Drums</div>
                     </div>
-                    <div class="p-6 flex flex-col flex-1">
+                    <div class="p-6 flex flex-col items-center text-center flex-1">
                         <h3
                             class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors line-clamp-2">
                             Rock Drumming Fundamentals</h3>
-                        <div class="flex items-center gap-3 mb-6">
-                            <img src="https://i.pravatar.cc/150?u=chris"
-                                class="w-8 h-8 rounded-full border-2 border-white dark:border-gray-700">
-                            <span class="text-sm font-medium text-gray-600 dark:text-gray-400">Chris Evans</span>
+                        <div class="flex flex-col items-center gap-2 mb-6">
+                            <img src="https://i.pravatar.cc/150?u=marcus"
+                                class="w-10 h-10 rounded-xl border-2 border-white dark:border-gray-800 transition-transform group-hover:scale-110">
+                            <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">Marcus Cole</span>
                         </div>
                         <div
-                            class="mt-auto pt-6 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between">
+                            class="mt-auto w-full pt-6 border-t border-gray-100 dark:border-gray-700 flex items-center justify-center gap-8">
                             <div class="flex flex-col">
                                 <span class="text-2xl font-black text-gray-900 dark:text-white">$65.00</span>
                             </div>
@@ -444,17 +444,17 @@
                             class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-lg uppercase tracking-wider shadow-lg">
                             Vocals</div>
                     </div>
-                    <div class="p-6 flex flex-col flex-1">
+                    <div class="p-6 flex flex-col items-center text-center flex-1">
                         <h3
                             class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors line-clamp-2">
                             Master Your Voice: Vocal Training</h3>
-                        <div class="flex items-center gap-3 mb-6">
+                        <div class="flex flex-col items-center gap-2 mb-6">
                             <img src="https://i.pravatar.cc/150?u=sarah"
-                                class="w-8 h-8 rounded-full border-2 border-white dark:border-gray-700">
-                            <span class="text-sm font-medium text-gray-600 dark:text-gray-400">Sarah Jenkins</span>
+                                class="w-10 h-10 rounded-xl border-2 border-white dark:border-gray-700 transition-transform group-hover:scale-110">
+                            <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">Sarah Jenkins</span>
                         </div>
                         <div
-                            class="mt-auto pt-6 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between">
+                            class="mt-auto w-full pt-6 border-t border-gray-100 dark:border-gray-700 flex items-center justify-center gap-8">
                             <div class="flex flex-col">
                                 <span class="text-2xl font-black text-gray-900 dark:text-white">$55.00</span>
                             </div>
@@ -484,17 +484,17 @@
                             class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-lg uppercase tracking-wider shadow-lg">
                             Violin</div>
                     </div>
-                    <div class="p-6 flex flex-col flex-1">
+                    <div class="p-6 flex flex-col items-center text-center flex-1">
                         <h3
                             class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors line-clamp-2">
                             The Complete Violin Masterclass</h3>
-                        <div class="flex items-center gap-3 mb-6">
+                        <div class="flex flex-col items-center gap-2 mb-6">
                             <img src="https://i.pravatar.cc/150?u=elena"
-                                class="w-8 h-8 rounded-full border-2 border-white dark:border-gray-700">
-                            <span class="text-sm font-medium text-gray-600 dark:text-gray-400">Elena Fisher</span>
+                                class="w-10 h-10 rounded-xl border-2 border-white dark:border-gray-700 transition-transform group-hover:scale-110">
+                            <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">Elena Fisher</span>
                         </div>
                         <div
-                            class="mt-auto pt-6 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between">
+                            class="mt-auto w-full pt-6 border-t border-gray-100 dark:border-gray-700 flex items-center justify-center gap-8">
                             <div class="flex flex-col">
                                 <span class="text-2xl font-black text-gray-900 dark:text-white">$80.00</span>
                             </div>
@@ -524,17 +524,17 @@
                             class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-lg uppercase tracking-wider shadow-lg">
                             Production</div>
                     </div>
-                    <div class="p-6 flex flex-col flex-1">
+                    <div class="p-6 flex flex-col items-center text-center flex-1">
                         <h3
                             class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors line-clamp-2">
                             Music Production in Ableton Live</h3>
-                        <div class="flex items-center gap-3 mb-6">
+                        <div class="flex flex-col items-center gap-2 mb-6">
                             <img src="https://i.pravatar.cc/150?u=alex"
-                                class="w-8 h-8 rounded-full border-2 border-white dark:border-gray-700">
-                            <span class="text-sm font-medium text-gray-600 dark:text-gray-400">Alex Chen</span>
+                                class="w-10 h-10 rounded-xl border-2 border-white dark:border-gray-700 transition-transform group-hover:scale-110">
+                            <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">Alex Chen</span>
                         </div>
                         <div
-                            class="mt-auto pt-6 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between">
+                            class="mt-auto w-full pt-6 border-t border-gray-100 dark:border-gray-700 flex items-center justify-center gap-8">
                             <div class="flex flex-col">
                                 <span class="text-2xl font-black text-gray-900 dark:text-white">$95.00</span>
                             </div>
@@ -563,17 +563,17 @@
                             class="absolute top-4 left-4 bg-secondary text-white text-[10px] font-bold px-3 py-1.5 rounded-lg uppercase tracking-wider shadow-lg">
                             Violin</div>
                     </div>
-                    <div class="p-6 flex flex-col flex-1">
+                    <div class="p-6 flex flex-col items-center text-center flex-1">
                         <h3
                             class="text-xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2 group-hover:text-primary transition-colors">
                             Classical Violin Masterclass</h3>
-                        <div class="flex items-center gap-3 mb-6">
+                        <div class="flex flex-col items-center gap-2 mb-6">
                             <img src="https://i.pravatar.cc/150?u=g"
-                                class="w-8 h-8 rounded-full border-2 border-white dark:border-gray-700">
-                            <span class="text-sm font-medium text-gray-600 dark:text-gray-400">Elena Fisher</span>
+                                class="w-10 h-10 rounded-xl border-2 border-white dark:border-gray-700 transition-transform group-hover:scale-110">
+                            <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">Elena Fisher</span>
                         </div>
                         <div
-                            class="mt-auto pt-6 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between">
+                            class="mt-auto w-full pt-6 border-t border-gray-100 dark:border-gray-700 flex items-center justify-center gap-8">
                             <div class="flex flex-col">
                                 <span class="text-2xl font-black text-gray-900 dark:text-white">$80.00</span>
                             </div>
@@ -602,17 +602,17 @@
                             class="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold px-3 py-1.5 rounded-lg uppercase tracking-wider shadow-lg">
                             Cello</div>
                     </div>
-                    <div class="p-6 flex flex-col flex-1">
+                    <div class="p-6 flex flex-col items-center text-center flex-1">
                         <h3
                             class="text-xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2 group-hover:text-primary transition-colors">
                             Cello for Beginners: First Steps</h3>
-                        <div class="flex items-center gap-3 mb-6">
+                        <div class="flex flex-col items-center gap-2 mb-6">
                             <img src="https://i.pravatar.cc/150?u=h"
-                                class="w-8 h-8 rounded-full border-2 border-white dark:border-gray-700">
-                            <span class="text-sm font-medium text-gray-600 dark:text-gray-400">Michael Ross</span>
+                                class="w-10 h-10 rounded-xl border-2 border-white dark:border-gray-700 transition-transform group-hover:scale-110">
+                            <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">Michael Ross</span>
                         </div>
                         <div
-                            class="mt-auto pt-6 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between">
+                            class="mt-auto w-full pt-6 border-t border-gray-100 dark:border-gray-700 flex items-center justify-center gap-8">
                             <div class="flex flex-col">
                                 <span class="text-2xl font-black text-gray-900 dark:text-white">$55.00</span>
                             </div>
@@ -632,8 +632,9 @@
                     </div>
                 </div>
 
-                <!-- Card 9: Theory -->
-                <div class="music-card group overflow-hidden bg-white dark:bg-gray-800 flex flex-col h-full">
+                <!-- Card 9: Theory (Centered since odd) -->
+                <div
+                    class="music-card group overflow-hidden bg-white dark:bg-gray-800 flex flex-col h-full md:col-span-2 md:max-w-md md:mx-auto">
                     <div class="relative h-56 overflow-hidden">
                         <img src="assets/images/course-theory.jpg" alt="Course"
                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
@@ -641,17 +642,17 @@
                             class="absolute top-4 left-4 bg-gray-900 text-white text-[10px] font-bold px-3 py-1.5 rounded-lg uppercase tracking-wider shadow-lg">
                             Theory</div>
                     </div>
-                    <div class="p-6 flex flex-col flex-1">
+                    <div class="p-6 flex flex-col items-center text-center flex-1">
                         <h3
                             class="text-xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2 group-hover:text-primary transition-colors">
                             Music Theory: Understanding Harmony</h3>
-                        <div class="flex items-center gap-3 mb-6">
+                        <div class="flex flex-col items-center gap-2 mb-6">
                             <img src="https://i.pravatar.cc/150?u=i"
-                                class="w-8 h-8 rounded-full border-2 border-white dark:border-gray-700">
-                            <span class="text-sm font-medium text-gray-600 dark:text-gray-400">Dr. Emily Wong</span>
+                                class="w-10 h-10 rounded-xl border-2 border-white dark:border-gray-700 transition-transform group-hover:scale-110">
+                            <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">Dr. Emily Wong</span>
                         </div>
                         <div
-                            class="mt-auto pt-6 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between">
+                            class="mt-auto w-full pt-6 border-t border-gray-100 dark:border-gray-700 flex items-center justify-center gap-8">
                             <div class="flex flex-col">
                                 <span class="text-2xl font-black text-gray-900 dark:text-white">$35.00</span>
                             </div>
@@ -705,7 +706,7 @@
         <!-- Footer content... -->
         <!-- [NEW] How Learning Works Section -->
         <section class="py-24 px-6 md:px-12 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
-            <div class="max-w-7xl mx-auto text-center">
+            <div class="max-w-6xl mx-auto text-center">
                 <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-16">How Our Curriculum Works</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
                     <!-- Connecting Line (hidden on mobile) -->
@@ -755,14 +756,10 @@
 
         <!-- Footer -->
         <footer class="bg-slate-900 text-slate-300 py-16 px-6 md:px-12">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                 <div class="space-y-6">
                     <a href="index.html" class="flex items-center gap-2 text-white">
-                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                            <path
-                                d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5.02V13.051c-.245-.034-.493-.051-.74-.051-1.8 0-3.26 1.075-3.26 2.4s1.46 2.4 3.26 2.4 3.26-1.075 3.26-2.4V6.261l8-1.6v6.39c-.245-.034-.493-.051-.74-.051-1.8 0-3.26 1.075-3.26 2.4s1.46 2.4 3.26 2.4 3.26-1.075 3.26-2.4V3z">
-                            </path>
-                        </svg>
+                        <img src="assets/images/favicon.svg" alt="MusicFlow Logo" class="w-8 h-8 rounded-lg">
                         <span class="text-2xl font-bold tracking-tight">MusicFlow</span>
                     </a>
                     <p class="text-slate-400">Making music education accessible, affordable, and fun for everyone,
@@ -818,7 +815,7 @@
             </div>
 
             <div
-                class="max-w-7xl mx-auto pt-12 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-500">
+                class="max-w-6xl mx-auto pt-12 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-500">
                 <p>© 2026 MusicFlow Online School. All rights reserved.</p>
                 <div class="flex gap-6">
                     <a href="#" class="hover:text-slate-300">Terms of Service</a>

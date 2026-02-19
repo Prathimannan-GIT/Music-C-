@@ -29,11 +29,8 @@
     <!-- Header -->
     <header class="header-sticky py-4 px-6 md:px-12 flex items-center justify-between" role="banner">
         <a href="index.html" class="flex items-center gap-2" aria-label="MusicFlow Home">
-            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                <path
-                    d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5.02V13.051c-.245-.034-.493-.051-.74-.051-1.8 0-3.26 1.075-3.26 2.4s1.46 2.4 3.26 2.4 3.26-1.075 3.26-2.4V6.261l8-1.6v6.39c-.245-.034-.493-.051-.74-.051-1.8 0-3.26 1.075-3.26 2.4s1.46 2.4 3.26 2.4 3.26-1.075 3.26-2.4V3z">
-                </path>
-            </svg>
+            <img src="assets/images/favicon.svg" alt="MusicFlow Logo"
+                class="w-8 h-8 rounded-lg shadow-lg shadow-primary/20">
             <span class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">MusicFlow</span>
         </a>
 
@@ -276,7 +273,7 @@
     <!-- Featured Courses -->
     <section class="courses-section py-24 px-6 md:px-12 bg-gray-50 dark:bg-gray-800/20"
         aria-labelledby="courses-heading">
-        <div class="max-w-7xl mx-auto">
+        <div class="max-w-6xl mx-auto">
             <div
                 class="courses-header flex flex-col md:flex-row justify-between items-center md:items-end mb-12 gap-6 text-center md:text-left">
                 <div>
@@ -311,15 +308,16 @@
                             class="course-filter px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm font-semibold hover:bg-gray-100 dark:hover:bg-gray-700 w-full md:w-auto mb-2 md:mb-0"
                             aria-pressed="false">Drums</button>
                         <button
-                            class="course-filter px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm font-semibold hover:bg-gray-100 dark:hover:bg-gray-700 w-full md:w-auto"
+                            class="course-filter px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm font-semibold hover:bg-gray-100 dark:hover:bg-gray-700 w-full md:w-auto mb-2 md:mb-0"
                             aria-pressed="false">Vocals</button>
+
                     </div>
                 </div>
             </div>
 
             <div class="courses-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Course Card 1 -->
-                <article class="course-card music-card group overflow-hidden">
+                <article class="course-card music-card group overflow-hidden flex flex-col h-full">
                     <div class="course-image relative h-56 overflow-hidden">
                         <img src="https://lwfiles.mycourse.app/655203bc2f10a7a9837d8a7a-public/2fe49cfb1bd85d995cee0a26063e4939.jpg"
                             alt="Beginner Guitar Mastery Course"
@@ -328,7 +326,7 @@
                             class="course-price absolute top-4 left-4 bg-secondary text-white px-3 py-1 rounded-md text-sm font-bold">
                             $49</div>
                     </div>
-                    <div class="course-content p-6">
+                    <div class="course-content p-6 flex flex-col items-center text-center flex-grow">
                         <div class="course-meta flex items-center gap-2 mb-3">
                             <span
                                 class="course-category text-xs font-bold text-primary uppercase tracking-wider">Guitar</span>
@@ -338,12 +336,11 @@
                         <h3
                             class="course-title text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-primary transition-colors">
                             Beginner Guitar Mastery</h3>
-                        <div class="course-instructor flex items-center justify-between mb-6">
+                        <div class="course-instructor flex flex-col items-center gap-3 mb-6">
                             <div class="instructor-info flex items-center gap-2">
                                 <img src="https://i.pravatar.cc/150?u=teacher1" alt="Alex Rivers - Guitar Instructor"
-                                    class="w-8 h-8 rounded-full border-2 border-white dark:border-gray-800">
-                                <span class="instructor-name text-sm font-medium text-gray-600 dark:text-gray-400">Alex
-                                    Rivers</span>
+                                    class="w-7 h-7 rounded-full border-2 border-white dark:border-gray-800 transition-transform group-hover:scale-110">
+
                             </div>
                             <div class="course-rating flex items-center gap-1 text-yellow-500">
                                 <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" aria-hidden="true">
@@ -355,96 +352,99 @@
                             </div>
                         </div>
                         <a href="course-detail.html"
-                            class="course-cta block text-center py-3 bg-slate-100 dark:bg-gray-800 text-gray-900 dark:text-white font-bold rounded-lg group-hover:bg-primary group-hover:text-white transition-all">View
+                            class="course-cta w-full block text-center py-3 bg-slate-100 dark:bg-gray-800 text-gray-900 dark:text-white font-bold rounded-lg group-hover:bg-primary group-hover:text-white transition-all mt-auto">View
                             Course</a>
                     </div>
                 </article>
 
                 <!-- Course Card 2 -->
-                <article class="course-card music-card group overflow-hidden">
+                <article class="course-card music-card group overflow-hidden flex flex-col h-full">
                     <div class="course-image relative h-56 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1552422535-c45813c61732?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            alt="Classical Piano Essentials Course" alt="Course"
+                            alt="Classical Piano Essentials Course"
                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         <div
-                            class="absolute top-4 left-4 bg-secondary text-white px-3 py-1 rounded-md text-sm font-bold">
+                            class="course-price absolute top-4 left-4 bg-secondary text-white px-3 py-1 rounded-md text-sm font-bold">
                             $79</div>
                     </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="text-xs font-bold text-primary uppercase tracking-wider">Piano</span>
+                    <div class="course-content p-6 flex flex-col items-center text-center flex-grow">
+                        <div class="course-meta flex items-center gap-2 mb-3">
+                            <span
+                                class="course-category text-xs font-bold text-primary uppercase tracking-wider">Piano</span>
                             <span class="text-gray-300">•</span>
-                            <span class="text-xs text-gray-500">18 Lessons</span>
+                            <span class="course-duration text-xs text-gray-500">18 Lessons</span>
                         </div>
                         <h3
-                            class="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-primary transition-colors">
+                            class="course-title text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-primary transition-colors">
                             Classical Piano Essentials</h3>
-                        <div class="flex items-center justify-between mb-6">
-                            <div class="flex items-center gap-2">
-                                <img src="https://i.pravatar.cc/150?u=teacher2" alt="Teacher"
-                                    class="w-8 h-8 rounded-full border-2 border-white dark:border-gray-800">
-                                <span class="text-sm font-medium text-gray-600 dark:text-gray-400">Elena Vance</span>
+                        <div class="course-instructor flex flex-col items-center gap-3 mb-6">
+                            <div class="instructor-info flex items-center gap-2">
+                                <img src="https://i.pravatar.cc/150?u=teacher2" alt="Elena Vance - Piano Instructor"
+                                    class="w-7 h-7 rounded-full border-2 border-white dark:border-gray-800 transition-transform group-hover:scale-110">
+
                             </div>
-                            <div class="flex items-center gap-1 text-yellow-500">
+                            <div class="course-rating flex items-center gap-1 text-yellow-500">
                                 <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
                                     <path
                                         d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
                                     </path>
                                 </svg>
-                                <span class="text-sm font-bold">4.9</span>
+                                <span class="rating-score text-sm font-bold">4.9</span>
                             </div>
                         </div>
                         <a href="course-detail.html"
-                            class="block text-center py-3 bg-slate-100 dark:bg-gray-800 text-gray-900 dark:text-white font-bold rounded-lg group-hover:bg-primary group-hover:text-white transition-all">View
+                            class="course-cta w-full block text-center py-3 bg-slate-100 dark:bg-gray-800 text-gray-900 dark:text-white font-bold rounded-lg group-hover:bg-primary group-hover:text-white transition-all mt-auto">View
                             Course</a>
                     </div>
-            </div>
+                </article>
 
-            <!-- Course Card 3 -->
-            <div class="music-card group overflow-hidden">
-                <div class="relative h-56 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                        alt="Course"
-                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute top-4 left-4 bg-secondary text-white px-3 py-1 rounded-md text-sm font-bold">
-                        $55</div>
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="text-xs font-bold text-primary uppercase tracking-wider">Drums</span>
-                        <span class="text-gray-300">•</span>
-                        <span class="text-xs text-gray-500">32 Lessons</span>
+                <!-- Course Card 3 -->
+                <article class="course-card music-card group overflow-hidden flex flex-col h-full">
+                    <div class="course-image relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Rock Drumming Basics Course"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="course-price absolute top-4 left-4 bg-secondary text-white px-3 py-1 rounded-md text-sm font-bold">
+                            $55</div>
                     </div>
-                    <h3
-                        class="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-primary transition-colors">
-                        Rock Drumming Basics</h3>
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="flex items-center gap-2">
-                            <img src="https://i.pravatar.cc/150?u=teacher3" alt="Teacher"
-                                class="w-8 h-8 rounded-full border-2 border-white dark:border-gray-800">
-                            <span class="text-sm font-medium text-gray-600 dark:text-gray-400">Marcus Cole</span>
+                    <div class="course-content p-6 flex flex-col items-center text-center flex-grow">
+                        <div class="course-meta flex items-center gap-2 mb-3">
+                            <span
+                                class="course-category text-xs font-bold text-primary uppercase tracking-wider">Drums</span>
+                            <span class="text-gray-300">•</span>
+                            <span class="course-duration text-xs text-gray-500">32 Lessons</span>
                         </div>
-                        <div class="flex items-center gap-1 text-yellow-500">
-                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                                <path
-                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                </path>
-                            </svg>
-                            <span class="text-sm font-bold">4.7</span>
+                        <h3
+                            class="course-title text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-primary transition-colors">
+                            Rock Drumming Basics</h3>
+                        <div class="course-instructor flex flex-col items-center gap-3 mb-6">
+                            <div class="instructor-info flex items-center gap-2">
+                                <img src="https://i.pravatar.cc/150?u=teacher3" alt="Marcus Cole - Drums Instructor"
+                                    class="w-7 h-7 rounded-full border-2 border-white dark:border-gray-800 transition-transform group-hover:scale-110">
+
+                            </div>
+                            <div class="course-rating flex items-center gap-1 text-yellow-500">
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                    </path>
+                                </svg>
+                                <span class="rating-score text-sm font-bold">4.7</span>
+                            </div>
                         </div>
+                        <a href="course-detail.html"
+                            class="course-cta w-full block text-center py-3 bg-slate-100 dark:bg-gray-800 text-gray-900 dark:text-white font-bold rounded-lg group-hover:bg-primary group-hover:text-white transition-all mt-auto">View
+                            Course</a>
                     </div>
-                    <a href="course-detail.html"
-                        class="block text-center py-3 bg-slate-100 dark:bg-gray-800 text-gray-900 dark:text-white font-bold rounded-lg group-hover:bg-primary group-hover:text-white transition-all">View
-                        Course</a>
-                </div>
+                </article>
             </div>
-        </div>
         </div>
     </section>
 
     <!-- [NEW] Testimonials Section -->
     <section class="py-24 px-6 md:px-12 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
-        <div class="max-w-7xl mx-auto">
+        <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Student Success Stories</h2>
                 <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Join thousands of students who have
@@ -609,7 +609,7 @@
 
     <!-- How It Works -->
     <section class="py-24 px-6 md:px-12 bg-white dark:bg-gray-900">
-        <div class="max-w-7xl mx-auto text-center">
+        <div class="max-w-6xl mx-auto text-center">
             <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-16">Your Path to Mastery</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                 <div class="flex flex-col items-center">
@@ -668,7 +668,7 @@
 
     <!-- Pricing Section -->
     <section class="py-24 px-6 md:px-12 bg-slate-50 dark:bg-gray-800/50">
-        <div class="max-w-7xl mx-auto">
+        <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Pricing Plans</h2>
                 <p class="text-gray-600 dark:text-gray-400">Choose the plan that fits your musical goals.</p>
@@ -878,14 +878,10 @@
 
     <!-- Footer -->
     <footer class="bg-slate-900 text-slate-300 py-16 px-6 md:px-12">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             <div class="space-y-6">
                 <a href="index.html" class="flex items-center gap-2 text-white">
-                    <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                        <path
-                            d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5.02V13.051c-.245-.034-.493-.051-.74-.051-1.8 0-3.26 1.075-3.26 2.4s1.46 2.4 3.26 2.4 3.26-1.075 3.26-2.4V6.261l8-1.6v6.39c-.245-.034-.493-.051-.74-.051-1.8 0-3.26 1.075-3.26 2.4s1.46 2.4 3.26 2.4 3.26-1.075 3.26-2.4V3z">
-                        </path>
-                    </svg>
+                    <img src="assets/images/favicon.svg" alt="MusicFlow Logo" class="w-8 h-8 rounded-lg">
                     <span class="text-2xl font-bold tracking-tight">MusicFlow</span>
                 </a>
                 <p class="text-slate-400">Making music education accessible, affordable, and fun for everyone,
@@ -900,7 +896,7 @@
                     <a href="#" class="p-2 bg-slate-800 rounded-lg hover:bg-primary transition-colors hover:text-white">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path
-                                d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16.362a4.2a4.2 0 110-8.4 4.2 4.2 0 010 8.4zM18.406 4.296a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" />
+                                d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16.362a4.2 4.2 0 110-8.4 4.2 4.2 0 010 8.4zM18.406 4.296a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" />
                         </svg>
                     </a>
                     <a href="#" class="p-2 bg-slate-800 rounded-lg hover:bg-primary transition-colors hover:text-white">
@@ -945,7 +941,7 @@
         </div>
 
         <div
-            class="max-w-7xl mx-auto pt-12 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-500">
+            class="max-w-6xl mx-auto pt-12 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-500">
             <p>© 2026 MusicFlow Online School. All rights reserved.</p>
             <div class="flex gap-6">
                 <a href="#" class="hover:text-slate-300">Terms of Service</a>
