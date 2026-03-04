@@ -928,16 +928,42 @@
                 </ul>
             </div>
 
-            <div>
-                <h4 class="text-white font-bold mb-6 text-lg">Newsletter</h4>
-                <p class="text-slate-400 mb-4">Get the latest music tips and course updates.</p>
-                <form class="flex gap-2">
-                    <input type="email" placeholder="Email address"
-                        class="flex-1 bg-slate-800 border-none rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-primary outline-none">
-                    <button
-                        class="px-4 py-2 bg-primary text-white font-bold rounded-lg hover:bg-primary-dark transition-all">Join</button>
-                </form>
-            </div>
+            <div class="w-full">
+    <h4 class="text-white font-bold mb-6 text-lg">Newsletter</h4>
+    
+    <p class="text-slate-400 mb-4">
+        Get the latest music tips and course updates.
+    </p>
+
+    <!-- Newsletter Form -->
+    <form class="w-full max-w-sm">
+        <div class="flex flex-col sm:flex-row items-stretch gap-2">
+            
+            <!-- Email Input -->
+            <input 
+                type="email" 
+                placeholder="Mail address"
+                class="w-full bg-slate-800 text-white 
+                       rounded-lg px-4 py-2 text-sm
+                       focus:ring-2 focus:ring-primary 
+                       outline-none transition-all"
+                required
+            >
+
+            <!-- Join Button -->
+            <button
+                type="submit"
+                class="shrink-0 px-4 py-2
+                       bg-primary text-white font-bold 
+                       rounded-lg 
+                       hover:bg-primary-dark 
+                       transition-all duration-300">
+                Join
+            </button>
+
+        </div>
+    </form>
+</div>
         </div>
 
         <div
